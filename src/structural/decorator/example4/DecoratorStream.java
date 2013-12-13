@@ -81,7 +81,7 @@ public class DecoratorStream {
         public void write(String[] s) {
             super.write(s);
             System.out.println("encrypt:");
-            StringBuffer sb = new StringBuffer(s[0]);
+            StringBuilder sb = new StringBuilder(s[0]);
             for (int i = 0; i < sb.length(); i++) {
                 sb.setCharAt(i, (char) (sb.charAt(i) - 5));
             }
@@ -89,7 +89,7 @@ public class DecoratorStream {
         }
 
         public void read(String[] s) {
-            StringBuffer sb = new StringBuffer(s[0]);
+            StringBuilder sb = new StringBuilder(s[0]);
             for (int i = 0; i < sb.length(); i++) {
                 sb.setCharAt(i, (char) (sb.charAt(i) + 5));
             }
@@ -101,7 +101,7 @@ public class DecoratorStream {
 
     public static void main(String[] args) {
         LCD stream = new Authenticate(new Scramble(new Core()));
-        String[] str = {new String()};
+        String[] str = {""};
         stream.write(str);
         System.out.println("main:     " + str[0]);
         stream.read(str);

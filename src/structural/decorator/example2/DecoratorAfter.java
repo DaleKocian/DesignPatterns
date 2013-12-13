@@ -72,10 +72,9 @@ public class DecoratorAfter {
     }
 
     public static void main(String[] args) {
-        I[] array = {new X(new A()), new Y(new X(new A())),
-                new Z(new Y(new X(new A())))};
-        for (int i = 0; i < array.length; i++) {
-            array[i].doIt();
+        I[] array = {new X(new A()), new Y(new X(new A())), new Z(new Y(new X(new A())))};
+        for (I anArray : array) {
+            anArray.doIt();
             System.out.print("  ");
         }
     }
