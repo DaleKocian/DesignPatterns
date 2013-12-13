@@ -1,0 +1,29 @@
+package structural.composite.example3;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * Created by dkocian on 12/13/13.
+ */
+class Box extends Entity {
+    private List children = new ArrayList();
+    private int value;
+
+    public Box(int val) {
+        value = val;
+    }
+
+    public void add(Entity c) {
+        children.add(c);
+    }
+
+    public void traverse() {
+        System.out.println(indent.toString() + value);
+        indent.append("   ");
+        for (int i = 0; i < children.size(); i++) {
+            ((Entity) children.get(i)).traverse();
+        }
+        indent.setLength(indent.length() - 3);
+    }
+}
