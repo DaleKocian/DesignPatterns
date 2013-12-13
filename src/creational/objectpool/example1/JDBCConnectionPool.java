@@ -9,7 +9,9 @@ import java.sql.SQLException;
  */
 public class JDBCConnectionPool extends ObjectPool<Connection> {
 
-    private String dsn, usr, pwd;
+    private String dsn;
+    private String usr;
+    private String pwd;
 
     public JDBCConnectionPool(String driver, String dsn, String usr, String pwd) {
         super();
