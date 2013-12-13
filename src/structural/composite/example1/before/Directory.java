@@ -20,10 +20,9 @@ class Directory {
     public void ls() {
         System.out.println(CompositeDemo.g_indent + m_name);
         CompositeDemo.g_indent.append("   ");
-        for (int i = 0; i < m_files.size(); ++i) {
-            Object obj = m_files.get(i);
+        for (Object obj : m_files) {
             // Recover the type of this object
-            if (obj.getClass().getName().equals("Directory")) {
+            if (obj instanceof Directory) {
                 ((Directory) obj).ls();
             } else {
                 ((File) obj).ls();

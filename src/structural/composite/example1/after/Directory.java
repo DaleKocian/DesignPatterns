@@ -20,9 +20,9 @@ class Directory implements AbstractFile {
     public void ls() {
         System.out.println(CompositeDemo.g_indent + m_name);
         CompositeDemo.g_indent.append("   ");
-        for (int i = 0; i < m_files.size(); ++i) {
+        for (Object m_file : m_files) {
             // Leverage the "lowest common denominator"
-            AbstractFile obj = (AbstractFile) m_files.get(i);
+            AbstractFile obj = (AbstractFile) m_file;
             obj.ls();
         }
         CompositeDemo.g_indent.setLength(CompositeDemo.g_indent.length() - 3);
