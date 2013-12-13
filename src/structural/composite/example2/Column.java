@@ -9,7 +9,7 @@ public class Column extends Composite {
     }
 
     public void traverse() {
-        System.out.print("Col");
+        System.out.print(Column.class.getSimpleName());
         super.traverse();
     }
 }

@@ -9,7 +9,7 @@ public class Row extends Composite {
     }
 
     public void traverse() {
-        System.out.print("Row");
+        System.out.print(Row.class.getSimpleName());
         super.traverse();
     }
 }

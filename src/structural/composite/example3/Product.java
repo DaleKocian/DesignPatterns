@@ -5,8 +5,12 @@ package structural.composite.example3;
  */
 class Product extends Entity {
     private int value;
-    public Product( int val ) { value = val; }
+
+    public Product(int val) {
+        value = val;
+    }
+
     public void traverse() {
-        System.out.println( indent.toString() + value );
+        System.out.println(indent.toString() + value);
     }
 }

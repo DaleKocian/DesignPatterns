@@ -4,7 +4,7 @@ package structural.composite.example2;
  * Created by dkocian on 12/13/13.
  */
 abstract class Composite implements Component {
-    private Component[] children = new Component[9];  // 3. Couple to interface
+    private Component[] children = new Component[9];
     private int total = 0;
     private int value;
 
@@ -14,12 +14,12 @@ abstract class Composite implements Component {
 
     public void add(Component c) {
         children[total++] = c;
-    } // 3. Couple to
+    }
 
-    public void traverse() {                                  //    interface
+    public void traverse() {
         System.out.print(value + "  ");
         for (int i = 0; i < total; i++) {
-            children[i].traverse();            // 4. Delegation and polymorphism
+            children[i].traverse();
         }
     }
 }

@@ -5,5 +5,6 @@ package structural.composite.example3;
  */
 abstract class Entity {
     protected static StringBuffer indent = new StringBuffer();
+
     public abstract void traverse();
 }

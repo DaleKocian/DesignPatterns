@@ -3,7 +3,7 @@ package structural.composite.example1.after;
 /**
  * Created by dkocian on 12/13/13.
  */
-class File implements AbstractFile{
+class File implements AbstractFile {
     private String m_name;
 
     public File(String name) {
