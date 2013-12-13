@@ -1,4 +1,4 @@
-package creational.pizzaexample;
+package creational.builder.example2;
 
 /**
  * Created by dkocian on 12/13/13.
