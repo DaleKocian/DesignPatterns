@@ -7,7 +7,7 @@ class StackList implements StackImpl {
     private Node last;
 
     public void push(int i) {
-        if (last == null) {
+        if (isEmpty()) {
             last = new Node(i);
         } else {
             last.next = new Node(i);
@@ -26,14 +26,14 @@ class StackList implements StackImpl {
 
     public int top() {
         if (isEmpty()) {
-            return -1;
+            return Integer.MIN_VALUE;
         }
         return last.value;
     }
 
     public int pop() {
         if (isEmpty()) {
-            return -1;
+            return Integer.MIN_VALUE;
         }
         int ret = last.value;
         last = last.prev;

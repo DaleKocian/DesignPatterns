@@ -4,7 +4,8 @@ package structural.bridge.example2;
  * Created by dkocian on 12/13/13.
  */
 class StackArray implements StackImpl {
-    private int[] items = new int[12];
+    private static final int MAX_SIZE_OF_STACK = 12;
+    private int[] items = new int[MAX_SIZE_OF_STACK];
     private int total = -1;
 
     public void push(int i) {
@@ -18,19 +19,19 @@ class StackArray implements StackImpl {
     }
 
     public boolean isFull() {
-        return total == 11;
+        return total == MAX_SIZE_OF_STACK - 1;
     }
 
     public int top() {
         if (isEmpty()) {
-            return -1;
+            return Integer.MIN_VALUE;
         }
         return items[total];
     }
 
     public int pop() {
         if (isEmpty()) {
-            return -1;
+            return Integer.MIN_VALUE;
         }
         return items[total--];
     }

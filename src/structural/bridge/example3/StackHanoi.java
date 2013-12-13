@@ -21,10 +21,14 @@ class StackHanoi extends Stack {
     }
 
     public void push(int in) {
-        if (!imp.empty() && in > (Integer) imp.peek()) {
+        if (isNotEmptyAndValueIsGreaterThanValueOnTopOfStack(in)) {
             ++totalRejected;
         } else {
             imp.push(in);
         }
+    }
+
+    private boolean isNotEmptyAndValueIsGreaterThanValueOnTopOfStack(int value) {
+        return !imp.empty() && value > (Integer) imp.peek();
     }
 }
